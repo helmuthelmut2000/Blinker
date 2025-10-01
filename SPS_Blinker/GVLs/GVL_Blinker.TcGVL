@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL_Blinker" Id="{c0ef48c9-f3ad-44f1-87d2-ce61b64192a3}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	rStatus		: REAL;
+	bBlink		: BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

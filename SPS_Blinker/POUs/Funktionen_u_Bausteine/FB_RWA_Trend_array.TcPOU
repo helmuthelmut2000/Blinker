@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_RWA_Trend_array" Id="{bf88992a-db4e-4f8e-8e04-cb2341ca1cfc}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_RWA_Trend_array
+VAR_IN_OUT
+	aArray	: ARRAY[0..2,1..1000] OF ST_H2_4_trend_array;	
+END_VAR
+VAR_INPUT
+	bFreigabe			: BOOL;
+	rTrueWert			: REAL;
+	rFalseWert			: REAL;	
+	iArray_i			: DINT := 1;
+	bFreigabe_save		: BOOL;	
+END_VAR
+VAR_OUTPUT
+	iArray_i_out		: DINT;
+	bFreigabe_save_out	: BOOL;	
+END_VAR
+VAR
+	bEinmallauf			: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bEinmallauf = FALSE THEN
+		IF bFreigabe = TRUE THEN
+				aArray[0,iArray_i].Nr	:= iArray_i;	//Laufende Nr
+				aArray[0,iArray_i].Zeit	:= dtsystemTime;//Zeit
+				aArray[0,iArray_i].Wert	:= rTrueWert;	//Wert Chart
+			ELSE
+				aArray[0,iArray_i].Nr	:= iArray_i;	//Laufende Nr
+				aArray[0,iArray_i].Zeit	:= dtsystemTime;//Zeit
+				aArray[0,iArray_i].Wert	:= rFalseWert;	//Wert Chart
+		END_IF	
+	iArray_i := (iArray_i+1);
+	bEinmallauf := TRUE;
+END_IF
+
+IF (bFreigabe <> bFreigabe_save) THEN 
+		IF bFreigabe = TRUE THEN
+				//Zuerst den alten Wert schreiben damit der Chart waagrecht bleibt
+				aArray[0,iArray_i].Nr	:= iArray_i;
+				aArray[0,iArray_i].Zeit	:= dtsystemTime;
+				aArray[0,iArray_i].Wert	:= rFalseWert;
+				iArray_i := (iArray_i+1);				
+				//Angezeigte Werte
+				aArray[0,iArray_i].Nr	:= iArray_i;	//Laufende Nr
+				aArray[0,iArray_i].Zeit	:= dtsystemTime;//Zeit
+				aArray[0,iArray_i].Wert	:= rTrueWert;	//Wert Chart
+			ELSE
+				//Zuerst den alten Wert schreiben damit der Chart waagrecht bleibt			
+				aArray[0,iArray_i].Nr	:= iArray_i;
+				aArray[0,iArray_i].Zeit	:= dtsystemTime;
+				aArray[0,iArray_i].Wert	:= rTrueWert;
+				iArray_i := (iArray_i+1);				
+				//Angezeigte Werte
+				aArray[0,iArray_i].Nr	:= iArray_i;	//Laufende Nr
+				aArray[0,iArray_i].Zeit	:= dtsystemTime;//Zeit
+				aArray[0,iArray_i].Wert	:= rFalseWert;	//Wert Chart
+		END_IF
+	iArray_i := (iArray_i+1);	
+	
+	//Zeit wie lannge das array aufgezeichnet werden soll
+	IF (dtsystemTime > ((aArray[0,1].Zeit) + T#600M)) THEN
+	iArray_i := 1;
+	END_IF
+	
+	bFreigabe_save := bFreigabe;
+END_IF
+
+	IF (iAktuelle_Sekunde = 0) OR (iAktuelle_Sekunde = 10) OR (iAktuelle_Sekunde = 20) OR (iAktuelle_Sekunde = 30) OR (iAktuelle_Sekunde = 40) OR (iAktuelle_Sekunde = 50) THEN
+		IF (bFreigabe = bFreigabe_save) THEN 
+			IF bFreigabe = TRUE THEN				
+					//Angezeigte Werte
+					aArray[0,iArray_i].Nr	:= iArray_i;	//Laufende Nr
+					aArray[0,iArray_i].Zeit	:= dtsystemTime;//Zeit
+					aArray[0,iArray_i].Wert	:= rTrueWert;	//Wert Chart
+				ELSE				
+					//Angezeigte Werte
+					aArray[0,iArray_i].Nr	:= iArray_i;	//Laufende Nr
+					aArray[0,iArray_i].Zeit	:= dtsystemTime;//Zeit
+					aArray[0,iArray_i].Wert	:= rFalseWert;	//Wert Chart
+			END_IF
+		END_IF
+	END_IF
+	
+	iArray_i_out		:= iArray_i;
+	bFreigabe_save_out	:= bFreigabe_save;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

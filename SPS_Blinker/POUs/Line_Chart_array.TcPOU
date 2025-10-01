@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Line_Chart_array" Id="{66ced7f6-785a-45da-827d-8ab8e694b161}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Line_Chart_array
+VAR
+	TestData						: ARRAY[0..2,1..1000] OF ST_MyData;
+	i								: DINT := 1;
+	bStatus_array_save				: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+IF bBlink <> bStatus_array_save THEN 
+		IF bBlink = TRUE THEN
+				//Zuerst den alten Wert schreiben damit der Chart waagrecht bleibt
+				TestData[0,i].Nr	:= i;
+				TestData[0,i].Zeit	:= dtsystemTime;
+				TestData[0,i].Wert	:= 0;
+				i := (i+1);				
+
+				TestData[0,i].Nr	:= i;			//Laufende Nr
+				TestData[0,i].Zeit	:= dtsystemTime;//Zeit
+				TestData[0,i].Wert	:= 1;			//Wert Chart
+			ELSE
+				//Zuerst den alten Wert schreiben damit der Chart waagrecht bleibt			
+				TestData[0,i].Nr	:= i;
+				TestData[0,i].Zeit	:= dtsystemTime;
+				TestData[0,i].Wert	:= 1;
+				i := (i+1);				
+
+				TestData[0,i].Nr	:= i;			//Laufende Nr
+				TestData[0,i].Zeit	:= dtsystemTime;//Zeit
+				TestData[0,i].Wert	:= 0;			//Wert Chart
+		END_IF
+	i := (i+1);
+	
+	//Zeit wie lannge das array aufgezeichnet werden soll
+	IF (dtsystemTime > ((TestData[0,1].Zeit) + T#90M) OR (i > 995)) THEN
+	i := 1;
+	END_IF
+	
+	bStatus_array_save := bBlink;
+END_IF	]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

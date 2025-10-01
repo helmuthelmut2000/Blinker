@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Blinker" Id="{7f134d98-dd2c-425e-a49e-7c64da5d2d98}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Blinker
+VAR
+	fbMyBlinker	: FB_Blinker;
+//	bBlink		: BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+fbMyBlinker(tBlinkOn:= T#500MS, tBlinkOff:=T#3S);
+bBlink	:= fbMyBlinker.Q;
+
+IF bBlink = TRUE THEN
+	rStatus	:= 1;
+ELSE	
+	rStatus	:= 0;
+END_IF]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

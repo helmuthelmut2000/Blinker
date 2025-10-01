@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_Blinker" Id="{5fe4fd53-57d3-4e38-9328-273650455aaa}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Blinker
+VAR_INPUT
+	tBlinkOn, tBlinkOff	: TIME;
+END_VAR
+VAR_OUTPUT
+	Q	: BOOL;
+END_VAR
+VAR
+	timerOn, timerOff	: TON;
+	nState	: INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE nState OF
+	0:		//Blinker on
+		timerOn(IN:= TRUE,	PT:=tBlinkOn);
+		Q	:= TRUE;
+		IF timerOn.Q THEN
+			timerOn(IN:=FALSE);
+			nState := 1;
+		END_IF
+	1:		//Blinker off
+		timerOff(IN:=TRUE, PT:=tBlinkOff);
+		Q	:= FALSE;
+		IF timerOff.Q THEN
+			timerOff(IN:=FALSE);
+			nState := 0;
+		END_IF
+END_CASE]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

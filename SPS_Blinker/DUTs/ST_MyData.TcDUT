@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_MyData" Id="{2287a124-1aca-471e-beef-441c47bddcd9}">
+    <Declaration><![CDATA[TYPE ST_MyData :
+STRUCT
+	Nr		: DINT;
+	Zeit 	: DT;
+	Wert 	: REAL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

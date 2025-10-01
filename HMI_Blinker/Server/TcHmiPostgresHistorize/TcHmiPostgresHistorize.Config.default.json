@@ -1,0 +1,25 @@
+{
+    "compressAfter": "P30D",
+    "compressionScheduleInterval": "P30D",
+    "databaseSettings": {
+        "connectionString": "Server=localhost; Port=5432; Database=historize_postgres; Uid=postgres; Pwd=@{password};Timeout=10;",
+        "password": "AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8jLODi7tXk6PljZaIEyczwAAAAAeAAAARQBuAGMAcgB5AHAAdABlAGQAIABkAGEAdABhAAAAEGYAAAABAAAgAAAAmiI3q1/Ro+4Xxu7yQMbLa+0v7b1xk4bM8qlRmgP2B/oAAAAADoAAAAACAAAgAAAAR9MLLUgyjGF1nImSPvdhakhnH2CW8ypLKLP9x0/hhqoQAAAAVmrQEB65m9gxVsqd1O7630AAAAD+QYOt9aliZtvZP1hHwbU84Z1ew1Kc36pAwfwxnX+o8GV254X1eLOE898yIVo5X0f2Ak5hMaUrln61TBoAn3oO",
+        "tableId": 1.0
+    },
+    "enableCompression": false,
+    "historizedSymbolList": {
+        "ADS.PLC1.GVL_Blinker.bBlink": {
+            "deletionInterval": "PT1M",
+            "interval": "PT1S",
+            "maxEntries": 10000,
+            "recordingEnabled": true
+        },
+        "ADS.PLC1.GVL_Blinker.rStatus": {
+            "deletionInterval": "PT1M",
+            "interval": "PT1S",
+            "maxEntries": 10000,
+            "recordingEnabled": true,
+            "version": 1.0
+        }
+    }
+}

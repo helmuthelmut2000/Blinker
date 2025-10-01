@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL" Id="{c6d38a18-0267-41ac-bfe7-05083475fe80}">
+    <Declaration><![CDATA[VAR_GLOBAL
+	//Systemzeit
+	bValid     			: BOOL := FALSE;
+	
+	dtsystemTime		: DATE_AND_TIME;
+	
+	todsystemTime		: TIME_OF_DAY;
+	
+	sAktuelle_Stunde	: STRING(255);	//Aktuelle Stunde als String
+	
+	iAktuelle_Stunde	: INT;			//Aktuelle Stunde als INT
+	
+	sAktuelle_Minute	: STRING(255);	//Aktuelle Minute als String
+	
+	iAktuelle_Minute	: INT;			//Aktuelle Minute als INT
+	
+	sAktuelle_Sekunde	: STRING(255);	//Aktuelle Sekunde als String
+	
+	iAktuelle_Sekunde	: INT;			//Aktuelle Sekunde als INT
+	
+	//Main
+	bStartUpFinish		: BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
