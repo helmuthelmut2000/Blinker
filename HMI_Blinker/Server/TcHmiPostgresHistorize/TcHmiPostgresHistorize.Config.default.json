@@ -2,24 +2,10 @@
     "compressAfter": "P30D",
     "compressionScheduleInterval": "P30D",
     "databaseSettings": {
-        "connectionString": "Server=localhost; Port=5432; Database=historize_postgres; Uid=postgres; Pwd=@{password};Timeout=10;",
-        "password": "AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8jLODi7tXk6PljZaIEyczwAAAAAeAAAARQBuAGMAcgB5AHAAdABlAGQAIABkAGEAdABhAAAAEGYAAAABAAAgAAAAmiI3q1/Ro+4Xxu7yQMbLa+0v7b1xk4bM8qlRmgP2B/oAAAAADoAAAAACAAAgAAAAR9MLLUgyjGF1nImSPvdhakhnH2CW8ypLKLP9x0/hhqoQAAAAVmrQEB65m9gxVsqd1O7630AAAAD+QYOt9aliZtvZP1hHwbU84Z1ew1Kc36pAwfwxnX+o8GV254X1eLOE898yIVo5X0f2Ak5hMaUrln61TBoAn3oO",
+        "connectionString": "Server=localhost; Port=5432; Database=Helmut_Local; Uid=postgres; Pwd=@{password};Timeout=10;",
+        "password": "AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8jLODi7tXk6PljZaIEyczwAAAAAeAAAARQBuAGMAcgB5AHAAdABlAGQAIABkAGEAdABhAAAAEGYAAAABAAAgAAAAc0c+KxcahZca01QGhkcc2Pp79obv/wHALSTlitECFvcAAAAADoAAAAACAAAgAAAAUUq0OrfC+VqXeo5r9Do742MKNZ4zZz1nsZyjwbZh9yAQAAAAvnJpB8v1IwW6FGlrCxGK4EAAAAAsyW2ZQhqyJF1meebUJaxCpYBhJ+YC1i7bh6RJFvjdWtLL0NIvuGSkEI5bwjQ8QzSIl4A9BtNgi42kwSDrJTDv",
         "tableId": 1.0
     },
     "enableCompression": false,
-    "historizedSymbolList": {
-        "ADS.PLC1.GVL_Blinker.bBlink": {
-            "deletionInterval": "PT1M",
-            "interval": "PT1S",
-            "maxEntries": 10000,
-            "recordingEnabled": true
-        },
-        "ADS.PLC1.GVL_Blinker.rStatus": {
-            "deletionInterval": "PT1M",
-            "interval": "PT1S",
-            "maxEntries": 10000,
-            "recordingEnabled": true,
-            "version": 1.0
-        }
-    }
+    "historizedSymbolList": {}
 }

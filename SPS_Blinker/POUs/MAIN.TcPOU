@@ -11,6 +11,8 @@ END_VAR
 Blinker();
 Line_Chart_array();
 
+LineChart();
+
 
 
 

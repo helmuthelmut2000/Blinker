@@ -27,7 +27,129 @@
     "DEFAULTLOCALE": "client",
     "DEFAULTTIMEFORMATLOCALE": "client",
     "DEFAULTTIMEZONE": "client",
-    "DEFINITIONS": {},
+    "DEFINITIONS": {
+        "ADS": {
+            "ADS-PLC1.ARRAY_0..1_1..10000_OF-st_Data": {
+                "displayAsMatrix": 2,
+                "items": {
+                    "allowMapping": false,
+                    "items": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.st_Data"
+                    },
+                    "maxItems": 10000,
+                    "minItems": 10000,
+                    "startOffset": 1,
+                    "type": "array"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+            },
+            "ADS-PLC1.ARRAY_0..1_1..100_OF-st_Data": {
+                "displayAsMatrix": 2,
+                "items": {
+                    "allowMapping": false,
+                    "items": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.st_Data"
+                    },
+                    "maxItems": 100,
+                    "minItems": 100,
+                    "startOffset": 1,
+                    "type": "array"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+            },
+            "ADS-PLC1.ARRAY_0..2_1..1000_OF-ST_MyData": {
+                "displayAsMatrix": 2,
+                "items": {
+                    "allowMapping": false,
+                    "items": {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_MyData"
+                    },
+                    "maxItems": 1000,
+                    "minItems": 1000,
+                    "startOffset": 1,
+                    "type": "array"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+            },
+            "ADS-PLC1.ST_MyData": {
+                "additionalProperties": false,
+                "properties": {
+                    "Nr": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/DINT"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "Wert": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "Zeit": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/DATE_AND_TIME"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Nr",
+                    "Zeit",
+                    "Wert"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.st_Data": {
+                "additionalProperties": false,
+                "properties": {
+                    "x": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "y": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "x",
+                    "y"
+                ],
+                "type": "object"
+            }
+        }
+    },
     "DEFLATECOMPRESSIONLEVEL": 5,
     "DIAGNOSTICS_DOMAINS": [],
     "DISABLED_CONFIGURATION_HINTS": [],
@@ -796,16 +918,6 @@
             },
             "USEMAPPING": true
         },
-        "ADS.PLC1.GVL_Blinker.bBlink": {
-            "ACCESS": 3,
-            "DOMAIN": "ADS",
-            "DYNAMIC": true,
-            "MAPPING": "PLC1::GVL_Blinker::bBlink",
-            "SCHEMA": {
-                "$ref": "tchmi:general#/definitions/BOOL"
-            },
-            "USEMAPPING": true
-        },
         "ADS.PLC1.GVL_Blinker.rStatus": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -813,6 +925,27 @@
             "MAPPING": "PLC1::GVL_Blinker::rStatus",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/REAL"
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC1.LineChart.TestData": {
+            "ACCESS": 3,
+            "CUSTOMERDATA": "",
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::LineChart::TestData",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..1_1..10000_OF-st_Data"
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC1.Line_Chart_array.TestData": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Line_Chart_array::TestData",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..2_1..1000_OF-ST_MyData"
             },
             "USEMAPPING": true
         },
@@ -4122,8 +4255,8 @@
                 "ADS.CheckLicense": 3,
                 "ADS.Diagnostics": 3,
                 "ADS.PLC1": 3,
-                "ADS.PLC1.GVL_Blinker.bBlink": 3,
                 "ADS.PLC1.GVL_Blinker.rStatus": 3,
+                "ADS.PLC1.Line_Chart_array.TestData": 3,
                 "ChangeUserSettings": 3,
                 "ConfirmAlarm": 3,
                 "CreateEvent": 3,

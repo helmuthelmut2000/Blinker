@@ -11,6 +11,10 @@
       },
       {
         "publishServerExtension": true,
+        "name": "TcHmiPostgresHistorize"
+      },
+      {
+        "publishServerExtension": true,
         "name": "TcHmiSqliteLogger"
       },
       {
@@ -34,7 +38,7 @@
     "salt": "d5b8fdefb8a8461c93ed63463b3118b4",
     "encryptedTcHmiServerPassword": "5sDX0W6iomAUIDkrKNJXug==",
     "tcHmiServerHost": "localhost",
-    "tcHmiServerPort": "5000",
+    "tcHmiServerPort": "3000",
     "uploadTimeout": "60",
     "connectionTimeout": "5",
     "requestTimeout": "60",
@@ -45,7 +49,7 @@
     "launchBrowserAfterPublish": true,
     "createVirtualDirectoriesOnTargetSystem": false,
     "tcHmiServerUserName": "__SystemAdministrator",
-    "tcHmiDestinationUrl": "http://localhost:5000/",
+    "tcHmiDestinationUrl": "http://localhost:3000/",
     "publishConfiguration": "remote",
     "tcHmiIgnoreCertificateErrors": true
   }

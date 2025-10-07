@@ -4,12 +4,5 @@
         "password": "",
         "tableId": 1.0
     },
-    "historizedSymbolList": {
-        "ADS.PLC1.GVL_Blinker.bBlink": {
-            "deletionInterval": "PT1M",
-            "interval": "PT1S",
-            "maxEntries": 10000,
-            "recordingEnabled": true
-        }
-    }
+    "historizedSymbolList": {}
 }

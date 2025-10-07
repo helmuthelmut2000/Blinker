@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="LineChart" Id="{ff880aae-28d7-445f-b1dd-cc1a44a18b99}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM LineChart
+VAR
+	TestData	: ARRAY[0..1,1..10000] OF st_Data;
+	i : INT;
+	Test : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FOR i := 1 TO 10000 DO
+	IF Test THEN
+		TestData[0,i].x := i;
+		TestData[0,i].y := i;
+	ELSE
+		TestData[0,i].x := i;
+		TestData[0,i].y := 4;			
+	END_IF
+END_FOR]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
