@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Modbus_Register_schreiben" Id="{2fa51c06-24fe-4320-9a37-dc48217e2d83}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Modbus_Register_schreiben
+VAR
+
+	uModbusConvert: U_Convert_REAL;	//Union zur Konvertierung
+	nReal: ARRAY[0..1] OF REAL;	//Wert, der konvertiert wird
+	//nDWORD: DWORD;	//Wert, der per Modbus empfangen wird
+
+	rH0_Aussentemp_Word: DWORD;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung HighWORD
+rTemp_RT_H1_O_Robat := uModbusConvert.AsReal;
+
+16791	=	18.9
+16788	=	18.5
+16784	=	18
+16834	=	24.3
+
+*)
+
+uModbusConvert.AsReal[0] := rH0_Aussentemp;
+//uModbusConvert.AsReal[1] := rH0_Aussentemp;
+rH0_Aussentemp_Word := uModbusConvert.AsWord;
+
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

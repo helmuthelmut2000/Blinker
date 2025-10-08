@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="Modbus_Register_lesen" Id="{7f1b4965-3910-4e7a-95d2-372be359e632}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Modbus_Register_lesen
+VAR
+	uModbusConvert: U_Convert;	//Union zur Konvertierung
+	nWord: ARRAY[0..1] OF WORD;	//Wert, der konvertiert wird
+	nDWORD: DWORD;	//Wert, der per Modbus empfangen wird
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung HighWORD
+rTemp_RT_H1_O_Robat := uModbusConvert.AsReal;
+
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[1];	//Zuweisung HighWORD
+rTemp_RT_H2_Robat := uModbusConvert.AsReal;
+
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[2];	//Zuweisung HighWORD
+rTemp_RT_H3_Robat := uModbusConvert.AsReal;
+
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[3];	//Zuweisung HighWORD
+rTemp_RT_H4_S_Robat := uModbusConvert.AsReal;
+
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[4];	//Zuweisung HighWORD
+rTemp_RT_H4_N_Robat := uModbusConvert.AsReal;
+
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[5];	//Zuweisung HighWORD
+rTemp_RT_H8_1_Robat := uModbusConvert.AsReal;
+
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[6];	//Zuweisung HighWORD
+rTemp_RT_H8_2_Robat := uModbusConvert.AsReal;
+
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[8];	//Zuweisung HighWORD
+rTemp_RT_H8_mittel_Robat := uModbusConvert.AsReal;
+
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[9];	//Zuweisung HighWORD
+rH2_3_AK_n_AT_Aus_Anzeige := uModbusConvert.AsReal;
+
+uModbusConvert.AsWord[0] := GVL_Modbus.mb_Output_Registers[0];	//Zuweisung LowWORD evtl. tauschen
+uModbusConvert.AsWord[1] := GVL_Modbus.mb_Output_Registers[10];	//Zuweisung HighWORD
+rH4_AK_n_AT_Aus_Anzeige := uModbusConvert.AsReal;
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

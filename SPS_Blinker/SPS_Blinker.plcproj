@@ -24,11 +24,21 @@
     <Compile Include="DUTs\ST_MyData.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\U_Convert.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\U_Convert_REAL.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\GVL.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="GVLs\GVL_Blinker.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\Temperaturfuehler\GVL_Temperatur.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
@@ -53,6 +63,12 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Modbus_Register_lesen.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Modbus_Register_schreiben.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Systemzeit.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -60,6 +76,7 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="GVLs\Temperaturfuehler" />
     <Folder Include="POUs\Funktionen_u_Bausteine" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />

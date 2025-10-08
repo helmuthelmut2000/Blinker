@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="U_Convert" Id="{aaf5a80a-4fff-42cd-a217-146edfe0780d}">
+    <Declaration><![CDATA[TYPE U_Convert :
+UNION
+	AsWord: ARRAY[0..1] OF WORD;
+	AsReal: REAL;
+END_UNION
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

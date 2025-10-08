@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL_Temperatur" Id="{5a9796e5-79b6-40b6-83b5-9bbe83eeae9f}">
+    <Declaration><![CDATA[VAR_GLOBAL
+//	rH0_Aussentemp_old	: REAL;	//Aussenfühler H0 Überdachung
+	rH0_Aussentemp		: REAL;	//Aussenfühler H0 Überdachung
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
