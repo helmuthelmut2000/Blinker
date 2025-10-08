@@ -7,5 +7,12 @@
         "tableId": 1.0
     },
     "enableCompression": false,
-    "historizedSymbolList": {}
+    "historizedSymbolList": {
+        "Blinker.fbMyBlinker.Q": {
+            "deletionInterval": "PT1M",
+            "interval": "PT1S",
+            "maxEntries": 10000,
+            "recordingEnabled": true
+        }
+    }
 }

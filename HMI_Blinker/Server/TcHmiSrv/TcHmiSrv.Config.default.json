@@ -1315,6 +1315,23 @@
             },
             "USEMAPPING": true
         },
+        "Blinker.fbMyBlinker.Q": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::Blinker::fbMyBlinker::Q",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "$ref": "tchmi:general#/definitions/BOOL"
+                    },
+                    {
+                        "propertyOrder": 3
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "ChangeUserSettings": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSrv",
@@ -4257,6 +4274,7 @@
                 "ADS.PLC1": 3,
                 "ADS.PLC1.GVL_Blinker.rStatus": 3,
                 "ADS.PLC1.Line_Chart_array.TestData": 3,
+                "Blinker.fbMyBlinker.Q": 3,
                 "ChangeUserSettings": 3,
                 "ConfirmAlarm": 3,
                 "CreateEvent": 3,
