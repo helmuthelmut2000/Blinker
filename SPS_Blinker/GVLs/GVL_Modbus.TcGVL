@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL_Modbus" Id="{199ec824-fd8f-4f64-aae7-c909843e8d7e}">
+    <Declaration><![CDATA[VAR_GLOBAL
+    mb_Input_Coils        : ARRAY [0..255] OF BOOL;
+    mb_Output_Coils       : ARRAY [0..255] OF BOOL;
+    mb_Input_Registers    : ARRAY [0..255] OF REAL;
+    mb_Output_Registers   : ARRAY [0..255] OF WORD;
+	
+	Temperatur : REAL;
+	
+ END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

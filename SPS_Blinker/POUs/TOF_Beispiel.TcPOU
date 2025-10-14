@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="TOF_Beispiel" Id="{aeaa60ce-d873-402f-a9b8-7b0ab8a4ef7d}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM TOF_Beispiel
+VAR
+	
+	iTest1	: INT;
+	iTest2	: INT;
+
+
+	fbTOF 	: TOF;
+	bVar1	: BOOL;
+	
+	bTOFout	: BOOL;
+	
+	bWind_mittel_temp	: BOOL;
+	bWind_mittel		: BOOL;
+	tTOF_abgel			: TIME;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+
+IF iTest1 > iTest2 THEN
+	bWind_mittel_temp	:= TRUE;
+ELSE
+	bWind_mittel_temp	:= FALSE;	
+END_IF
+
+
+
+fbTOF(IN := bWind_mittel_temp, PT := T#5S);
+bWind_mittel := fbTOF.Q;
+tTOF_abgel	 := fbTOF.ET;
+
+
+
+
+
+(*
+fbTOF(IN := bVar1, PT := T#5S);
+bTOFout := fbTOF.Q;
+*)]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

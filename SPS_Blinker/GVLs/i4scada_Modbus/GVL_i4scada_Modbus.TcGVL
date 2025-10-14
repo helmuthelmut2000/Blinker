@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL_i4scada_Modbus" Id="{f7e0540a-bd8e-4005-b86b-65eabb0dc38d}">
+    <Declaration><![CDATA[VAR_GLOBAL PERSISTENT
+	rTemp_RT_H1_O_Robat			: REAL;
+	rTemp_RT_H2_Robat			: REAL;
+	rTemp_RT_H3_Robat			: REAL;
+	rTemp_RT_H4_S_Robat			: REAL;
+	rTemp_RT_H4_N_Robat			: REAL;
+	rTemp_RT_H8_mittel_Robat	: REAL;
+	rTemp_RT_H8_1_Robat			: REAL;	
+	rTemp_RT_H8_2_Robat			: REAL;
+	
+	rTemp_RT_H1_O_Robat_2		: REAL;
+	rTemp_RT_H2_Robat_2			: REAL;
+	rTemp_RT_H3_Robat_2			: REAL;
+	rTemp_RT_H4_S_Robat_2		: REAL;
+	rTemp_RT_H4_N_Robat_2		: REAL;
+	rTemp_RT_H8_1_Robat_2		: REAL;
+	rTemp_RT_H8_2_Robat_2		: REAL;
+	rTemp_RT_H8_mittel_Robat_2	: REAL;
+	
+	rH2_3_AK_n_AT_Aus_Anzeige	: REAL;
+	rH4_AK_n_AT_Aus_Anzeige		: REAL;
+	rH2_3_AK_n_AT_Aus_Anzeige_2	: REAL;
+	rH4_AK_n_AT_Aus_Anzeige_2	: REAL;
+END_VAR
+VAR_GLOBAL
+	bQ1_H2_Freigabe				:BOOL;
+	bQ2_H2_Freigabe				:BOOL;
+	bQ3_H4_Freigabe				:BOOL;
+	bQ4_H4_Freigabe				:BOOL;
+	
+	bH2_3_Sperren				: BOOL;
+	bH4_Sperren					: BOOL;
+	
+	bQ1_H2_Freigabe_i4scada		:BOOL;
+	bQ2_H2_Freigabe_i4scada		:BOOL;
+	bQ3_H4_Freigabe_i4scada		:BOOL;
+	bQ4_H4_Freigabe_i4scada		:BOOL;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

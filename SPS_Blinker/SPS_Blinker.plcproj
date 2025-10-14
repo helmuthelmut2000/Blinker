@@ -72,6 +72,9 @@
     <Compile Include="POUs\Systemzeit.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\TOF_Beispiel.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />

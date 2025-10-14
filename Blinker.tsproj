@@ -10,7 +10,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{5E0829EF-215D-4774-9538-479E9A85A4A5}" Name="SPS_Blinker" PrjFilePath="SPS_Blinker\SPS_Blinker.plcproj" TmcFilePath="SPS_Blinker\SPS_Blinker.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{30ADDFE8-6DD3-F8FB-B721-D23CCA2236EE}" TmcPath="SPS_Blinker\SPS_Blinker.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A77284F3-D173-2844-8296-118984453294}" TmcPath="SPS_Blinker\SPS_Blinker.tmc">
 					<Name>SPS_Blinker Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Contexts>
