@@ -4,7 +4,7 @@
     <Declaration><![CDATA[PROGRAM TOF_Beispiel
 VAR
 	
-	iTest1	: INT;
+	iTest1	: INT	:= 0;
 	iTest2	: INT;
 
 
