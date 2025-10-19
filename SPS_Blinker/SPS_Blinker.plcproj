@@ -45,6 +45,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\alle_5sekunden.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Blinker.TcPOU">
       <SubType>Code</SubType>
     </Compile>

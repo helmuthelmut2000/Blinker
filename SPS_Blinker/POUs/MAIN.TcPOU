@@ -8,11 +8,13 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[Systemzeit();
-//Blinker();
+Blinker();
 //Line_Chart_array();
 
 //LineChart();
-TOF_Beispiel();
+//TOF_Beispiel();
+
+alle_5sekunden();
 
 
 
